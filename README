@@ -1,0 +1,3 @@
+Single User interacts with the tool by entering expenses. Every expense has a date, a description, an amount, and 0 or more tags. Positive numbers indicate income or money earned (e.g., paychecks, gifts received) and negative numbers are expenses (e.g., groceries, clothes).
+
+The tool will allow users to enter and edit expenses, to tag those expenses, and to visualize trends over time. 

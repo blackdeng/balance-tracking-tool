@@ -1,0 +1,14 @@
+<%= form_for(@expense, :remote => true) do |f| %>
+  
+	<div class="field">
+  	<%= f.text_field :amount %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag 'Edit' %>
+  </div>
+
+<% end %>
+<td>
+<%= link_to 'Cancel', expenses_path %>
+</td>

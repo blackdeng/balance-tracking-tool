@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+	#expense_list td {
+    font-size: 1.0em;
+    margin: 0 3px 3px;
+    padding: 0.4em 0.4em 0.4em 1.5em;
+}
+
+.table_style {
+    background: #E6E6E6;
+    border: 1px solid #D3D3D3;
+    color: #555555;
+    width: 400px;
+    font-weight: normal;
+}
+</style>
+<head>
+  <title>MyCheckbook</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag "jquery.js", "rails.js" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+
+
+<%= yield %>
+
+</body>
+</html>

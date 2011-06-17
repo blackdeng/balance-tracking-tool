@@ -1,0 +1,29 @@
+﻿<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+         data.addColumn('string', 'x');
+  			 data.addColumn('number', 'Balance');
+  			 <% sum = 0 %>
+  			 <% @expense_months.keys.sort.each do |month, record|%>
+  			 		<% sum += @expense_months[month].collect(&:amount).sum %>
+  			 		
+  			 		data.addRow(["<%= month %>", <%= sum %>]);
+  			 		
+  			 <% end %>
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 800, height: 400, title: 'Monthly Balance Overview', vAxis:{title: 'Balance\(dollars\)'}, hAxis:{title: 'Month'}});
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+    <%= link_to 'Back', expenses_path %>
+  </body>
+</html>

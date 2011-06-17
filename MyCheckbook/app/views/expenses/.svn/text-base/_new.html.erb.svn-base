@@ -1,0 +1,15 @@
+<%= form_for(@expense, :remote => true) do |f| %>
+  
+  <td class="field">
+    <%= f.date_select :expense_date %>
+  </td>
+  <td class="field">
+    <%= f.text_field :amount %>
+  </td>
+  <td class="field">
+    <%= f.text_field :description %>
+  </td>
+  <td class="actions">
+    <%= submit_tag 'Add' %>
+  </td>
+<% end %>

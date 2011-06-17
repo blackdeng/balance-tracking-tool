@@ -1,0 +1,2 @@
+﻿
+$('#description_col<%=@expense.id%>').html('<%= escape_javascript(render 'editdescription') %>').fadeIn();  

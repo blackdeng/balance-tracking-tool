@@ -1,0 +1,4 @@
+
+<% expense = @expense%>
+$('#<%=expense.id%>').html('<%= escape_javascript(render 'expensesub') %>').fadeIn();  
+$('#error_place').html('<%= escape_javascript(render 'error') %>').fadeIn();

@@ -1,0 +1,27 @@
+<h1>Manage your money</h1>
+
+<% form_tag tags_path, :method => 'get' do %>
+  <p>
+  	Search by tags<br>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<table id="expense_list">
+  <%= render 'tablehead'%>
+
+<% @expenses.each do |expense| %>
+
+  	<%= render expense%>
+
+<% end %>
+<%= render 'new' %>
+</table>
+<div id='error_place'><%= render 'error'%></div>
+
+<%= link_to 'Balance Chart', {:controller => 'expenses', :action => 'balancechart'} %>
+
+<br />
+
+

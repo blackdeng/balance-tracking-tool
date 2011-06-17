@@ -1,0 +1,27 @@
+﻿<%= form_for(@expense, :remote => true) do |f| %>
+  <% if @expense.errors.any? %>
+    <td id="error_explanation">
+      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+      <% @expense.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </td>
+  <% end %>
+  
+  <td class="field">
+    <%= f.date_select :expense_date %>
+  </td>
+  <td class="field">
+    <%= f.text_field :amount %>
+  </td>
+  <td class="field">
+    <%= f.text_field :description %>
+  </td>
+  <td class="actions">
+    <%= submit_tag 'Edit' %>
+  </td>
+
+<% end %>

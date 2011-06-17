@@ -1,0 +1,6 @@
+	<tr id="<%=expense.id%>" class="table_style">
+    <td id='date_col<%=expense.id%>'><%= link_to expense.expense_date, editdate_url(:id => expense.id), :remote => true %></td>
+    <td id='amount_col<%=expense.id%>'><%= link_to expense.amount, editamount_url(:id => expense.id), :remote => true %></td>
+    <td id='description_col<%=expense.id%>'><%= link_to expense.description, editdescription_url(:id => expense.id), :remote => true %></td>
+   	<td><%= link_to 'Remove', expense, :confirm => 'Are you sure?', :method => :delete, :remote => true, :class=>'delete_expense' %></td>
+  </tr>

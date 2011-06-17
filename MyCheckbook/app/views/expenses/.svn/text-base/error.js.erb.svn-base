@@ -1,0 +1,2 @@
+
+$('#error_place').html('<%= escape_javascript(render 'error') %>').fadeIn();

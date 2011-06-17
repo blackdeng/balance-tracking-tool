@@ -1,0 +1,15 @@
+<h1>Search Results</h1>
+
+<table id="expense_list">
+  <%= render 'tablehead'%>
+
+<% @expenses.each do |expense| %>
+
+  	<%= render expense%>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'back', expenses_path %>
